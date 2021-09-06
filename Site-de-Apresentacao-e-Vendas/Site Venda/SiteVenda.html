@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="pt-br"></html>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale-1.8">
+    <meta http-equiv="X-UA-compatible" content="ie-edge"/>
+    <title>FPFS-NipponFlex</title>
+    
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Static Template</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="Css/style.css"/>
+       
+    </head>
+    
+    <body>
+        <div class="topo">
+            <h1>Distribuidor NipponFlex</h1>
+            <h2>Monte seu kit bem estar e receba em 24hs!</h2>
+        </div>
+    
+        <h3>Escolha sua Tecnologia Reparadora do Sono</h3>
+    
+        <div id="ARS" class="produto" onclick="escolhercolchao()">
+            <img src="imagens\colchão.jfif"/>
+            <h4>Aparelho Reparador do Sono - American</h4>
+            <p>*Ação do Fir Power e íons balls (Exclusivo NipponFlex)</p>
+            <p>*Ajuda a reequilibrar o metabolismo</p>
+            <p>*Regula pressão arterial e auxilia na prevenção de doenças cardiovasculares</p>
+            <p>*Tem ação anti-inflamatória e analgésica</p>
+    
+        </div>
+
+        <div id="travesseiro" class="produto" onclick="escolhertravesseiro()">
+            <img src="imagens\travesseiro.jfif"/>
+            <h4>Tavesseiro Eco Pillow NipponFlex</h4>
+            <p>*Ação do Fir Power e íons balls (Exclusivo NipponFlex)</p>
+            <p>*Auxilia no sono reparador</p>
+            <p>*Auxilia no tratamento das rinites alérgicas</p>
+            <p>*Auxilia em dores na região do pescoço e ombros</p>
+            <p>*Regula pressão arterial e auxilia na prevenção de doenças cardiovasculares</p>
+            <p>*Tem ação anti-inflamatória e analgésica</p>
+            <p>*Auxilia na diminuição das caspas e seborréia</p>
+            <p>*Alivio de dores e enxaquecas</p>
+            <p>*Auxilia na oxigenação do cérebro</p>
+            <p>*Facilita a transmissão dos impulsos nervosos</p>
+            <p>*Axilia nas manchas e rugas</p>
+               
+        </div>
+            <h3>Agora Escolha Seu Bracelete</h3>
+
+            <div id="pulseiraFirPower" class="produto" onclick="escolherpulseiraFirPower()">
+            <img src="imagens\bracelete fir power.jfif"/>
+            <h4>Bracelete Fir Power</h4>
+            <p>*Ação do Fir Power e íons balls (Exclusivo NipponFlex)</p>
+            <p>*Fortalece a energia do organismo e a imunidade</p>
+            <p>*Possui ação anti-inflamatória</p>
+            <p>*Alivia dores e febre</p>
+            <p>*Auxilia no tratamento de osteoarticular</p>
+            <p>*Melhora a circulação sanguínea</p>
+            <p>*Combate fadiga muscular</p>
+            <p>*Eleva a qualidade do sono</p>
+    
+        </div>
+       
+        <div id="pulseiraFirYoung" class="produto" onclick="escolherpulseiraFirYoung()">
+            <img src="imagens\bracelete young.jfif"/>
+            <h4>Bracelete Young</h4>
+            <p>*Ação do Fir Power e íons balls (Exclusivo NipponFlex)</p>
+            <p>*Fortalece a energia do organismo e a imunidade</p>
+            <p>*Possui ação anti-inflamatória</p>
+            <p>*Alivia dores e febre</p>
+            <p>*Auxilia no tratamento de osteoarticular</p>
+            <p>*Melhora a circulação sanguínea</p>
+            <p>*Combate fadiga muscular</p>
+            <p>*Eleva a qualidade do sono</p>
+               
+        </div>
+
+        <div  class="botao" onclick="finalizarPedido()">
+          Finalizar Pedido
+        </div>
+    
+    
+    <script>
+      //criando gaveta para guardar variavel - opção do pedido das funções
+      let colchao;
+      let bracelete;
+      
+
+    //colocando cor no pedido selecionado
+        function escolhercolchao() {
+            document.getElementById("ARS").style.borderColor = "green";
+            document.getElementById("travesseiro").style.borderColor = "white";
+            //guardar opção escolhida
+            colchao = "ARS";
+        }
+    
+        //colocando cor no pedido selecionado
+        function escolhertravesseiro() {
+            document.getElementById("travesseiro").style.borderColor = "green";
+            document.getElementById("ARS").style.borderColor = "white";
+            //guardar opção escolhida
+            colchao = "Travesseiro Eco Pillow";
+    
+        }
+
+        
+        //colocando cor no pedido selecionado
+        function escolherpulseiraFirPower() {
+            document.getElementById("pulseiraFirPower").style.borderColor = "green";
+            document.getElementById("pulseiraFirYoung").style.borderColor = "white";
+            //guardar opção escolhida
+            bracelete = "Bracelete Fir Power";
+
+        }
+
+        //colocando cor no pedido selecionado
+        function escolherpulseiraFirYoung() {
+            document.getElementById("pulseiraFirYoung").style.borderColor = "green";
+            document.getElementById("pulseiraFirPower").style.borderColor = "white";
+            //guardar opção escolhida
+            bracelete = "Bracelete Young";
+
+        }
+
+        //funcao para finalizar os pedidos
+    
+      function finalizarPedido() {
+           //pegar produtos escolhidos
+          let mensagem;
+       
+        //montar uma frase para o pedido
+        mensagem = "Olá, gostaria de pedir o (s) produto (s): " + colchao + " e " + bracelete;
+        
+        //integração com whatsapp
+        window.open("https://wa.me/+5521993755013?text=" + mensagem);
+        }
+    
+    </script>
+    </body>
+    </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
